@@ -18,8 +18,3 @@ RUN chmod 0440 /etc/sudoers.d/gleger
 RUN mv /tmp/* /usr/share/nginx/www
 
 EXPOSE 80
-
-#RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
-#CMD ["/usr/sbin/nginx"]
-#CMD /usr/sbin/nginx -c /etc/nginx/nginx.conf
