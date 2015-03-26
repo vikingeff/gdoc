@@ -2,13 +2,12 @@ FROM eboraas/debian
 
 MAINTAINER VikingZ email:gleger@student.42.fr
 
-# Add the tar file of the web site
-#ADD sources.tar /tmp/
-ADD sshd_config /etc/ssh/
-
 # if needed install softwares
 RUN apt-get update && apt-get install -y vim ssh sudo
 #RUN apt-get update && apt-get install -y openssh-server
+
+# Add the tar file of the web site
+ADD sshd_config /etc/ssh/
 
 # add user and sudo him
 RUN useradd -d /home/gleger -m -s /bin/bash gleger
@@ -27,6 +26,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 ADD docker_rsa.pub /home/gleger/.ssh/authorized_keys
+ADD docker_rsa.pub /root/.ssh/authorized_keys
 RUN chown gleger /home/gleger/.ssh/authorized_keys
 RUN chown -R gleger:gleger /home/gleger/.ssh/authorized_keys
 RUN chmod 700 /home/gleger/.ssh/authorized_keys

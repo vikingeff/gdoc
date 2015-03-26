@@ -1,3 +1,3 @@
-docker stop dock_ssh
-docker rm dock_ssh
+docker stop dock_sshd
+docker rm dock_sshd
 docker rmi vikingz/ssh
