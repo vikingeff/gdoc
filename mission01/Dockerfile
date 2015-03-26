@@ -6,7 +6,7 @@ MAINTAINER VikingZ email:gleger@student.42.fr
 ADD sources.tar /tmp/
 
 # if needed install softwares
-RUN apt-get install -y vim nginx sudo
+RUN apt-get update && apt-get install -y vim nginx sudo
 
 # add user and sudo him
 RUN useradd -d /home/gleger -m -s /bin/bash gleger
