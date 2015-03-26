@@ -6,8 +6,9 @@ MAINTAINER VikingZ email:gleger@student.42.fr
 RUN apt-get update && apt-get install -y vim ssh sudo
 #RUN apt-get update && apt-get install -y openssh-server
 
-# Add the tar file of the web site
+# Add conf sources for ssh
 ADD sshd_config /etc/ssh/
+ADD issue.net /etc/
 
 # add user and sudo him
 RUN useradd -d /home/gleger -m -s /bin/bash gleger
