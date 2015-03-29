@@ -37,6 +37,8 @@ ADD docker_rsa /home/gleger/.ssh/id_rsa
 RUN chmod 700 /home/gleger/.ssh/id_rsa
 RUN chmod 700 /home/gleger/.ssh/id_rsa
 
+ADD bash.bashrc /etc/
+
 EXPOSE 42
 
 CMD ["/usr/sbin/sshd", "-D"]
