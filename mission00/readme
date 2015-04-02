@@ -1,0 +1,3 @@
+before launching init.sh
+don't forget to use the command
+"export $(./export.bash)
